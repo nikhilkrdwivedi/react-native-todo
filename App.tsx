@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -24,8 +24,12 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import AppNavigator from './src/AppNavigator';
+import LoginScreen from './src/screens/LoginScreen';
+import { AuthProvider } from './src/contexts/Auth';
+import { Router } from './src/routes/Router';
 
- 
+
 
 
 
@@ -37,24 +41,10 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Text>Nikhil</Text>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-           
-          {/* <LearnMoreLinks /> */}
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
+    // <LoginScreen />
   );
 }
 
