@@ -28,6 +28,8 @@ import AppNavigator from './src/AppNavigator';
 import LoginScreen from './src/screens/LoginScreen';
 import { AuthProvider } from './src/contexts/Auth';
 import { Router } from './src/routes/Router';
+import FlashMessage, { showMessage } from 'react-native-flash-message';
+import NetInfo from "@react-native-community/netinfo";
 
 
 
@@ -39,9 +41,22 @@ function App(): JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? 'black' : 'white',
   };
+//   const unsubscribe = NetInfo.addEventListener(state => {
+//     console.log("Connection type", state.type);
+//     console.log("Is connected?", state.isConnected);
+//     if(!state.isConnected){
+//       showMessage({
+//         message: "Please enable Network",
+//                 description: 'Looks like Internet/WiFi is not enable',
+//                 type: "danger",
+//                 duration:1000
+//       })
+//     }
 
+// });
   return (
     <AuthProvider>
+      <FlashMessage />
       <Router />
     </AuthProvider>
     // <LoginScreen />

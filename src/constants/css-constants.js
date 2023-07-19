@@ -1,5 +1,5 @@
 export const CSS_CONSTANTS={
-    borderRadius: 8,
+    // borderRadius: 8,
     paddingHorizontal:8, 
     paddingVertical:8,
     marginVertical:8,
@@ -33,6 +33,24 @@ export const CSS_CONSTANTS={
         indigo: '#264348',
         navy_blue: '#003171' ,
         hanada: '#044F67',
-        lapis_lazuli:'#1F4788'
-    }
+        lapis_lazuli:'#1F4788',
+        dark_pink:'rgba(171, 18, 135, 1)',
+        dark_green: 'rgba(64, 158, 74, 1)',
+        dark_orange:'rgba(207, 97, 4, 1)',
+        tran_pink:'rgba(255, 0, 244, 0.24)',
+        tran_green: 'rgba(41, 238, 62, 0.24)',
+        tran_orange: 'rgba(255, 171, 19, 0.59)',
+        dark_blue:'rgba(20, 43, 77, 1)',
+        white:'#fff',
+        light_black:'rgba(50, 56, 65, 1)'
+
+
+    },
+    borderRadius:{
+        xs:8,
+        sm:12,
+        md:16,
+        lg:20,
+        xlg:24,
+    },
 }

@@ -20,26 +20,37 @@ const signIn = async (email: string, password: string) => {
     // will be need connect with some real API,
     // send email and password, and if credential is corret
     //the API will resolve with some token and another datas as the below
+    return new Promise(async(resolve, reject) => {
     try {
         const { data } = await axios.post('http://3.111.226.44:3020/api/v1/authentications/login', { email, password });
-        console.log({ data })
-        return new Promise((resolve) => {
-            resolve(data.data);
-        });
-    } catch (error) {
-        console.log(error)
+        // console.log({ data })
+        
+            resolve(data);
+    } catch (error:any) {
+        // console.log(error)
+        // console.log({"error.response":error.response.status})
+        reject(error.response)
+    }})
+};
+
+const register = async (name: string, email: string, password: string) => {
+    // this is a mock of an API call, in a real app
+    // will be need connect with some real API,
+    // send email and password, and if credential is corret
+    //the API will resolve with some token and another datas as the below
+    return new Promise(async(resolve, reject) => {
+    try {
+        const { data } = await axios.post('http://3.111.226.44:3020/api/v1/authentications/register', { email, password, name });
+        // console.log({ data })
+        resolve(data);
+    } catch (error:any) {
+        console.log({"error.response":error.response.status})
+        reject(error.response)
     }
-    // return new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     resolve({
-    //       token: JWTTokenMock,
-    //       email: email,
-    //       name: 'Lucas Garcez',
-    //     });
-    //   }, 1000);
-    // });
+});
 };
 
 export const authService = {
     signIn,
+    register
 }; 

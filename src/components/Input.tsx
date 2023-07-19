@@ -9,7 +9,7 @@ type InputProps = {
 export default function Input({placeholder, onChange,value}:InputProps) {
     return (
         <View style={{ paddingHorizontal: CSS_CONSTANTS.paddingHorizontal*1.5 }}>
-            <TextInput placeholder={placeholder} style={{ borderColor: 'black', borderWidth: 0.5, paddingHorizontal: CSS_CONSTANTS.paddingHorizontal, paddingVertical: CSS_CONSTANTS.paddingVertical, borderRadius: CSS_CONSTANTS.borderRadius, fontSize:CSS_CONSTANTS.fontSize.md, marginVertical: CSS_CONSTANTS.marginVertical }} onChangeText={(value) => onChange(value) }
+            <TextInput placeholder={placeholder} style={{ borderColor: 'black', borderWidth: 0.5, paddingHorizontal: CSS_CONSTANTS.paddingHorizontal, paddingVertical: CSS_CONSTANTS.paddingVertical, borderRadius: CSS_CONSTANTS.borderRadius.xs, fontSize:CSS_CONSTANTS.fontSize.md, marginVertical: CSS_CONSTANTS.marginVertical }} onChangeText={(value) => onChange(value) }
                 // keyboardType='numeric'
                 value={value}
             />
