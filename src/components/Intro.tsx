@@ -14,7 +14,7 @@ const STYLES = ['default', 'dark-content', 'light-content'] as const;
 const TRANSITIONS = ['fade', 'slide', 'none'] as const;
 
 export default function Intro({navigation, name}:IntroProps) {
-  console.log({navigation: Object.keys(navigation)})
+  // console.log({navigation: Object.keys(navigation)})
     const {authData, signOut} : any= useAuth();
  
   

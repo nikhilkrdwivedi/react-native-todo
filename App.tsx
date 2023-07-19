@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
@@ -30,6 +30,7 @@ import { AuthProvider } from './src/contexts/Auth';
 import { Router } from './src/routes/Router';
 import FlashMessage, { showMessage } from 'react-native-flash-message';
 import NetInfo from "@react-native-community/netinfo";
+import { Camera } from 'react-native-vision-camera';
 
 
 
@@ -54,6 +55,19 @@ function App(): JSX.Element {
 //     }
 
 // });
+const checkPermission = async()=>{
+  const cameraPermission = await Camera.getCameraPermissionStatus();
+  const microphonePermission = await Camera.getMicrophonePermissionStatus();
+  console.log({
+    cameraPermission,
+    microphonePermission
+  });
+  const newCameraPermission = await Camera.requestCameraPermission()
+const newMicrophonePermission = await Camera.requestMicrophonePermission()
+}
+useEffect(()=>{
+  checkPermission()
+},[]);
   return (
     <AuthProvider>
       <FlashMessage />

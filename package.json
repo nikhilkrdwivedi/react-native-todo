@@ -25,6 +25,7 @@
     "react-native-safe-area-context": "^4.7.1",
     "react-native-screens": "^3.22.1",
     "react-native-vector-icons": "^9.2.0",
+    "react-native-vision-camera": "^2.15.4",
     "underscore.string": "^3.3.6"
   },
   "devDependencies": {

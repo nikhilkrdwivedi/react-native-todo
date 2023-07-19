@@ -4,7 +4,7 @@ import { CSS_CONSTANTS } from '../constants/css-constants';
 import MatIcon from 'react-native-vector-icons/MaterialIcons'
 import { DrawerActions } from '@react-navigation/native';
 export default function Splash({navigation}:any) {
-  console.log({navigation: Object.keys(navigation)})
+  // console.log({navigation: Object.keys(navigation)})
   
     useEffect(()=>{
         // setTimeout(()=>{

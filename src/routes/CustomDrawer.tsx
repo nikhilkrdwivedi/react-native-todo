@@ -6,6 +6,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 import { useAuth } from '../contexts/Auth'
 export default function CustomDrawer({navigation}:any) {
   const {authData, signOut} : any= useAuth();
+  // console.log({navigation: Object.keys(navigation)})
   return (
  <View style={{flex: 1,flexDirection: 'column', justifyContent:'space-between',backgroundColor: 'rgba(219, 254, 223, 0.58)' }}>
   <View>
@@ -13,7 +14,7 @@ export default function CustomDrawer({navigation}:any) {
       <FontAwesomeIcon name='user-circle-o' size={28} color={'white'}/>
       <Text style={{color:'white', fontSize: 16, fontWeight: '700', paddingHorizontal:CSS_CONSTANTS.padding.xs}}>{authData?.user?.name}</Text>
      </View>
-     <TouchableOpacity onPress={()=>navigation.navigate('To Do')}  style={{flexDirection:'row',alignItems:'center',backgroundColor: 'white', padding: CSS_CONSTANTS.padding.md, borderBottomWidth:1, borderColor:'gray'}}>
+     <TouchableOpacity onPress={()=>{navigation.navigate('To Do')}}  style={{flexDirection:'row',alignItems:'center',backgroundColor: 'white', padding: CSS_CONSTANTS.padding.md, borderBottomWidth:1, borderColor:'gray'}}>
      <FontAwesomeIcon name='list-ul' size={20} color={'rgba(35, 20, 77, 1)'}/>
       <Text style={{color:'rgba(35, 20, 77, 1)', fontSize: 16, fontWeight: '700', paddingHorizontal:CSS_CONSTANTS.padding.xs}}>Todo list</Text>
       </TouchableOpacity>

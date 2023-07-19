@@ -132,6 +132,9 @@ export const HomeScreen = ({ navigation }: any) => {
                 <TouchableOpacity onPress={() => navigation.navigate('AddTodo')}>
                     <AntIcon name="addfile" size={24} color={'green'} />
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+                    <AntIcon name="camera" size={24} color={'gray'} />
+                </TouchableOpacity>
             </View>
             <View style={{ width: '100%', flex:1 }}
                 // refreshControl={
