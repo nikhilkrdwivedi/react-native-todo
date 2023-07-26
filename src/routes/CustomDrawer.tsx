@@ -14,7 +14,8 @@ export default function CustomDrawer({navigation}:any) {
       <FontAwesomeIcon name='user-circle-o' size={28} color={'white'}/>
       <Text style={{color:'white', fontSize: 16, fontWeight: '700', paddingHorizontal:CSS_CONSTANTS.padding.xs}}>{authData?.user?.name}</Text>
      </View>
-     <TouchableOpacity onPress={()=>{navigation.navigate('To Do')}}  style={{flexDirection:'row',alignItems:'center',backgroundColor: 'white', padding: CSS_CONSTANTS.padding.md, borderBottomWidth:1, borderColor:'gray'}}>
+     {/* add List */}
+     <TouchableOpacity onPress={()=>{navigation.navigate('List')}}  style={{flexDirection:'row',alignItems:'center',backgroundColor: 'white', padding: CSS_CONSTANTS.padding.md, borderBottomWidth:1, borderColor:'gray'}}>
      <FontAwesomeIcon name='list-ul' size={20} color={'rgba(35, 20, 77, 1)'}/>
       <Text style={{color:'rgba(35, 20, 77, 1)', fontSize: 16, fontWeight: '700', paddingHorizontal:CSS_CONSTANTS.padding.xs}}>Todo list</Text>
       </TouchableOpacity>

@@ -8,8 +8,11 @@ import Input from '../components/Input'
 import { useAuth } from '../contexts/Auth';
 import axios from 'axios';
 import { showMessage } from 'react-native-flash-message';
+import { addTodos } from '../redux/action';
+import {useDispatch} from 'react-redux'
 export default function AddToDoScreen({ navigation, route }: any) {
     const { item } = route?.params || {};
+   const dispatch =  useDispatch();
     console.log({item})
     const [visibleStatus, setVisibleStatus] = useState<boolean>(false);
     const [visibleDate, setVisibleDate] = useState<boolean>(false);
@@ -49,6 +52,7 @@ export default function AddToDoScreen({ navigation, route }: any) {
                     type: "success",
                     duration:1000
                 });
+                dispatch(addTodos(data?.data))
                 // setTodoPagination(data?.pagination)
             } catch (error:any) {
                 console.log( {error: error.response})

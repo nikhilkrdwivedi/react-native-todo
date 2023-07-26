@@ -15,6 +15,7 @@ import ViewMedia from '../screens/camera/ViewMedia';
 const Stack = createStackNavigator();
 
 export const ToDoListStack = () => {
+    console.log('this is testibg')
     return (
         <Stack.Navigator>
             {/* <Stack.Screen name="Home Screen" component={HomeScreen} options={{ headerShown: false }} /> */}

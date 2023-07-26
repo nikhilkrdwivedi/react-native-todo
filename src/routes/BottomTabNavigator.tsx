@@ -11,7 +11,8 @@ import { ToDoListStack } from './ToDoListStack';
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomNavigator() {
+export default function BottomNavigator({navigation}:any) {
+  console.log({navigation})
   return (
     <Tab.Navigator>
       <Tab.Screen name="To Do"  component={ToDoListStack} options={{headerShown: false, tabBarIcon:()=>{
